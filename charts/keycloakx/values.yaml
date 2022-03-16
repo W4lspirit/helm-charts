@@ -9,7 +9,7 @@ replicas: 1
 
 image:
   # The Keycloak image repository
-  repository: quay.io/keycloak/keycloak-x
+  repository: quay.io/keycloak/keycloak
   # Overrides the Keycloak image tag whose default is the chart appVersion
   tag: ""
   # The Keycloak image pull policy
@@ -104,8 +104,6 @@ args: []
 # Additional environment variables for Keycloak
 extraEnv: ""
   # - name: KEYCLOAK_LOGLEVEL
-  #   value: DEBUG
-  # - name: WILDFLY_LOGLEVEL
   #   value: DEBUG
   # - name: CACHE_OWNERS_COUNT
   #   value: "2"
@@ -241,10 +239,7 @@ service:
   httpsPort: 8443
   # The HTTPS Service node port if type is NodePort
   httpsNodePort: null
-  # The WildFly management Service port
-  httpManagementPort: 9990
-  # The WildFly management Service node port if type is NodePort
-  httpManagementNodePort: null
+
   # Additional Service ports, e. g. for custom admin console
   extraPorts: []
   # When using Service type LoadBalancer, you can restrict source ranges allowed
